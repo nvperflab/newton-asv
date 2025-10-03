@@ -262,7 +262,7 @@
         "warmup_time": -1
     },
     "simulation.bench_cloth.FastExampleClothManipulation.time_simulate": {
-        "code": "class FastExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 30\n        self.example = ExampleClothManipulation(ViewerNull(num_frames=self.num_frames))",
+        "code": "class FastExampleClothManipulation:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example, args=None)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 30\n        self.example = ExampleClothManipulation(ViewerNull(num_frames=self.num_frames))",
         "min_run_count": 2,
         "name": "simulation.bench_cloth.FastExampleClothManipulation.time_simulate",
         "number": 1,
@@ -274,11 +274,11 @@
         "timeout": 300,
         "type": "time",
         "unit": "seconds",
-        "version": "e988df7362b547f3a7d63818479fde212e90c229bf7d08f76d8abf6f0695b906",
+        "version": "b3ceadbc55945ff4c6130a4fbcec6e455edc4e3085dd62f0e02103dbd33101ad",
         "warmup_time": -1
     },
     "simulation.bench_cloth.FastExampleClothTwist.time_simulate": {
-        "code": "class FastExampleClothTwist:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 100\n        self.example = ExampleClothTwist(ViewerNull(num_frames=self.num_frames))",
+        "code": "class FastExampleClothTwist:\n    @skip_benchmark_if(wp.get_cuda_device_count() == 0)\n    def time_simulate(self):\n        newton.examples.run(self.example, None)\n    \n        wp.synchronize_device()\n\n    def setup(self):\n        self.num_frames = 100\n        self.example = ExampleClothTwist(ViewerNull(num_frames=self.num_frames))",
         "min_run_count": 2,
         "name": "simulation.bench_cloth.FastExampleClothTwist.time_simulate",
         "number": 1,
@@ -289,7 +289,7 @@
         "sample_time": 0.01,
         "type": "time",
         "unit": "seconds",
-        "version": "7955b0a25040d6171fd318837e6c8363dab71558c0c42e097538d8c12f0ae4f2",
+        "version": "01dfa4b62b6e71ea72ece4c0c2371d26b1ba72a8ef8c94a900d8e40be3907293",
         "warmup_time": -1
     },
     "simulation.bench_mujoco.FastAnt.time_simulate": {
